@@ -1,0 +1,11 @@
+package:
+  version: 1.0.0
+  url: https://github.com/pooza/greenkin
+  authors:
+    - Tatsuya Koishi
+  email:
+    - tkoishi@b-shock.co.jp
+mastodon:
+  url: https://mstdn.example.com/
+websocket:
+  keepalive: 15

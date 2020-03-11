@@ -1,0 +1,7 @@
+.bundle/
+.DS_Store
+Thumbs.db
+._*
+.fuse*
+config/local.*
+.sass-cache
