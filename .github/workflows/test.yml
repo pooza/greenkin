@@ -32,15 +32,5 @@ jobs:
           bundle install --jobs 4 --retry 3
           bundle exec rake bundle:update
           bundle exec rake bundle:check
-      - name: update database
-        run: |
-          echo '*:*:*:*:password' >> ~/.pgpass
-          chmod 600 ~/.pgpass
-          psql -U postgres -h localhost -p 5432 -w makoto < ./db/init.sql
-          bundle exec rake makoto:quote:update
-          bundle exec rake makoto:track:update
-          bundle exec rake makoto:fairy:update
-          bundle exec rake makoto:keyword:update
-          bundle exec rake makoto:message:update
       - run: bundle exec rubocop
       - run: bundle exec rake test
