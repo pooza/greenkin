@@ -21,11 +21,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7.1
-      - name: apt install
-        run: |
-          sudo apt update
-          sudo apt install postgresql-client
-          sudo apt install mecab libmecab-dev mecab-ipadic-utf8
       - name: bundle install
         run: |
           gem install bundler
