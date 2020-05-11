@@ -6,20 +6,41 @@ env:
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: makoto
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.x
+          ruby-version: 2.7.1
+      - name: apt install
+        run: |
+          sudo apt update
+          sudo apt install postgresql-client
+          sudo apt install mecab libmecab-dev mecab-ipadic-utf8
       - name: bundle install
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
           bundle exec rake bundle:update
           bundle exec rake bundle:check
-      - name: Run lint
+      - name: update database
         run: |
-          bundle exec rubocop
-      - name: Run test
-        run: |
-          bundle exec rake test
+          echo '*:*:*:*:password' >> ~/.pgpass
+          chmod 600 ~/.pgpass
+          psql -U postgres -h localhost -p 5432 -w makoto < ./db/init.sql
+          bundle exec rake makoto:quote:update
+          bundle exec rake makoto:track:update
+          bundle exec rake makoto:fairy:update
+          bundle exec rake makoto:keyword:update
+          bundle exec rake makoto:message:update
+      - run: bundle exec rubocop
+      - run: bundle exec rake test
