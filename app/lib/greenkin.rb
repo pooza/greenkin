@@ -1,4 +1,5 @@
 require 'ginseng'
+require 'ginseng/fediverse'
 
 module Greenkin
   def self.dir

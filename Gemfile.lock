@@ -15,6 +15,14 @@ GIT
       yajl-ruby
       zeitwerk (>= 2.3.0)
 
+GIT
+  remote: https://github.com/pooza/ginseng-fediverse.git
+  revision: 53fbdfc665526f4f0c9aec855267a8e5e6353c92
+  specs:
+    ginseng-fediverse (1.1.1)
+      nokogiri
+      sanitize
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,6 +36,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
     concurrent-ruby (1.1.6)
+    crass (1.0.6)
     daemon-spawn (0.4.2)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -46,9 +55,14 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.0425)
+    mini_portile2 (2.4.0)
     minitest (5.14.0)
     multi_xml (0.6.0)
     netrc (0.11.0)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
+    nokogumbo (2.0.2)
+      nokogiri (~> 1.8, >= 1.8.4)
     parallel (1.19.1)
     parser (2.7.1.2)
       ast (~> 2.4.0)
@@ -72,6 +86,10 @@ GEM
     rubocop-performance (1.5.2)
       rubocop (>= 0.71.0)
     ruby-progressbar (1.10.1)
+    sanitize (5.1.0)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.8.0)
+      nokogumbo (~> 2.0)
     syslog-logger (1.6.8)
     test-unit (3.3.5)
       power_assert
@@ -96,6 +114,7 @@ DEPENDENCIES
   eventmachine
   faye-websocket
   ginseng-core!
+  ginseng-fediverse!
   rubocop
   rubocop-performance
   test-unit

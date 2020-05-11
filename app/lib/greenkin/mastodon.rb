@@ -1,5 +1,5 @@
 module Greenkin
-  class Mastodon < Ginseng::Mastodon
+  class Mastodon < Ginseng::Fediverse::MastodonService
     include Package
 
     def initialize(uri = nil, token = nil)

@@ -3,6 +3,7 @@ ruby '2.7.1'
 gem 'eventmachine'
 gem 'faye-websocket'
 gem 'ginseng-core', github: 'pooza/ginseng-core'
+gem 'ginseng-fediverse', github: 'pooza/ginseng-fediverse'
 
 group :development do
   gem 'rubocop'
