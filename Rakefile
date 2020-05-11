@@ -5,6 +5,4 @@ ENV['BUNDLE_GEMFILE'] ||= File.join(dir, 'Gemfile')
 require 'bundler/setup'
 require 'greenkin'
 
-Dir.glob(File.join(Greenkin::Environment.dir, 'app/task/*.rb')).sort.each do |f|
-  require f
-end
+Greenkin.load_tasks
