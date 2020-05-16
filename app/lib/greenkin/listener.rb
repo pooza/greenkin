@@ -75,9 +75,7 @@ module Greenkin
     def initialize
       @config = Config.instance
       @logger = Logger.new
-pp @config
       @mastodon = Mastodon.new(@config['/mastodon/url'], @config['/mastodon/token'])
-pp @mastodon
       @uri = @mastodon.create_streaming_uri
       @client = Faye::WebSocket::Client.new(@uri.to_s, nil, {
         ping: @config['/websocket/keepalive'],
