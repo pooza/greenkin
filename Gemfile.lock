@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/pooza/ginseng-core.git
-  revision: 201b1e309129ae62e8d37e35724883598535ce44
+  revision: 2c4cb5345d5ac562e3c62078b8422ef83a68db3a
   specs:
-    ginseng-core (1.7.2)
+    ginseng-core (1.7.3)
       activesupport
       addressable
       daemon-spawn
@@ -25,7 +25,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.0.3)
+    activesupport (6.0.3.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
