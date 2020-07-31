@@ -3,8 +3,7 @@ require 'faye/websocket'
 
 module Greenkin
   class Listener
-    attr_reader :client
-    attr_reader :uri
+    attr_reader :client, :uri
 
     def open
       @logger.info(class: self.class.to_s, message: 'open', uri: @uri.to_s)
