@@ -1,7 +1,7 @@
 namespace :greenkin do
   [:listener].each do |daemon|
     namespace daemon do
-      [:start, :stop].each do |action|
+      [:start, :stop].freeze.each do |action|
         desc "#{action} #{daemon}"
         task action do
           sh "#{File.join(Greenkin::Environment.dir, 'bin', "#{daemon}_daemon.rb")} #{action}"
