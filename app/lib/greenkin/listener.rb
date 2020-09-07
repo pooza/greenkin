@@ -39,7 +39,7 @@ module Greenkin
     end
 
     def message
-      return 'パプパプ' * rand(1..2) + 'うるさいぞ' + ['。', '！'].sample
+      return "#{'パプパプ' * rand(1..2)}うるさいぞ#{['。', '！'].sample}"
     end
 
     def self.start
