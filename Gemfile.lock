@@ -1,14 +1,14 @@
 GIT
   remote: https://github.com/pooza/ginseng-core.git
-  revision: b541c5870feea710585d5e211ca18de6635a7a74
+  revision: 9afcde6688f0a2a3ee312bf797e5422f773048a6
   specs:
-    ginseng-core (1.8.6)
+    ginseng-core (1.8.8)
       activesupport
       addressable
       daemon-spawn
       httparty
       json-schema
-      nokogiri
+      nokogiri (>= 1.11.0.rc4)
       rake
       rest-client
       sanitize
@@ -57,12 +57,13 @@ GEM
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2020.1104)
-    mini_portile2 (2.4.0)
+    mini_portile2 (2.5.0)
     minitest (5.14.2)
     multi_xml (0.6.0)
     netrc (0.11.0)
-    nokogiri (1.10.10)
-      mini_portile2 (~> 2.4.0)
+    nokogiri (1.11.0.rc4)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogumbo (2.0.4)
       nokogiri (~> 1.8, >= 1.8.4)
     parallel (1.20.1)
@@ -70,8 +71,9 @@ GEM
       ast (~> 2.4.1)
     power_assert (1.2.0)
     public_suffix (4.0.6)
+    racc (1.5.2)
     rainbow (3.0.0)
-    rake (13.0.1)
+    rake (13.0.3)
     regexp_parser (2.0.0)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
@@ -102,7 +104,7 @@ GEM
     test-unit (3.3.7)
       power_assert
     thread_safe (0.3.6)
-    tzinfo (1.2.8)
+    tzinfo (1.2.9)
       thread_safe (~> 0.1)
     unf (0.1.4)
       unf_ext
