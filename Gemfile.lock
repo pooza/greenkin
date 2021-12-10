@@ -19,9 +19,9 @@ GIT
 
 GIT
   remote: https://github.com/pooza/ginseng-fediverse.git
-  revision: 54333634ee72f5d82247091439120e384de8da0f
+  revision: 776260d71e3feb29207097e81cbbd7db5750d6b6
   specs:
-    ginseng-fediverse (1.4.6)
+    ginseng-fediverse (1.6.4)
 
 GEM
   remote: https://rubygems.org/
